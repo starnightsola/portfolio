@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617.45 242.82">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #efdd92;
+      }
+
+      .cls-2 {
+        fill: #99cadd;
+      }
+
+      .cls-3 {
+        font-size: 106.09px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #3a5f84;
+        font-family: BrushScriptMT, 'Brush Script MT';
+      }
+
+      .cls-4 {
+        font-size: 99.85px;
+      }
+
+      .cls-5 {
+        fill: #edd598;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M173.68,155.59c0,50.9-33.57,78.91-86.84,78.91S0,211.96,0,157.58C0,106.68,50.3,55.3,92.99,0c30.04,54.38,80.68,104.69,80.68,155.59Z"/>
+  <polygon class="cls-5" points="129.55 217.35 127.45 195.65 142.57 178.92 143.88 200.85 129.55 217.35"/>
+  <polygon class="cls-1" points="48.41 141.12 31.4 127.48 29.97 104.98 46.59 119.34 48.41 141.12"/>
+  <text class="cls-3" transform="translate(39.19 128.52)"><tspan x="0" y="0">K</tspan></text>
+  <text class="cls-4" transform="translate(86.84 209.08)"><tspan x="0" y="0">B</tspan></text>
+  <text class="cls-3" transform="translate(189.78 153.87)"><tspan x="0" y="0">Kou BiShin</tspan></text>
+</svg>
