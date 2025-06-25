@@ -5,12 +5,13 @@ import { notFound } from 'next/navigation'
 // 動的レンダリングを強制
 export const dynamic = 'force-dynamic'
 
-type Props = {
+export default async function WorkDetailPage({
+  params,
+  searchParams,
+}: {
   params: { id: string }
   searchParams?: { draftKey?: string }
-}
-
-export default async function WorkDetailPage({ params, searchParams }: Props) {
+}) {
   const { id } = params
   const { draftKey } = searchParams || {}
 
