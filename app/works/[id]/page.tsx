@@ -29,7 +29,7 @@ export default async function WorkDetailPage({ params, searchParams }: Props) {
         <p>{work.description}</p>
       </div>
     )
-  } catch (error) {
+  } catch (_error) {
     notFound()
   }
 }
