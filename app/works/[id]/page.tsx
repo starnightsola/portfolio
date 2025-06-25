@@ -1,7 +1,6 @@
 // app/works/[id]/page.tsx
 import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers'
-import Link from 'next/link'
 import { createClient } from 'microcms-js-sdk'
 
 const draftClient = createClient({
