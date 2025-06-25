@@ -7,14 +7,11 @@ type Props = {
 }
 
 export default async function WorkDetailPage({ params, searchParams }: Props) {
-  const { id } = params
-  const { draftKey } = searchParams
-
   const work = await client.getListDetail({
     endpoint: 'works',
-    contentId: id,
+    contentId: params.id,
     queries: {
-      draftKey, // ← これが重要
+      draftKey: searchParams?.draftKey,
     },
   })
 
