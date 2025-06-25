@@ -1,12 +1,6 @@
 import { client } from '@/lib/client'
 
-export default async function WorkDetailPage({
-  params,
-  searchParams,
-}: {
-  params: { id: string }
-  searchParams?: { draftKey?: string }
-}) {
+export default async function WorkDetailPage({ params, searchParams }: any) {
   const work = await client.getListDetail({
     endpoint: 'works',
     contentId: params.id,
