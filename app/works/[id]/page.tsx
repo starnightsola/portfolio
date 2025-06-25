@@ -2,12 +2,15 @@
 import { client } from '@/lib/client'
 import { notFound } from 'next/navigation'
 
-interface WorkDetailPageProps {
+// 動的レンダリングを強制
+export const dynamic = 'force-dynamic'
+
+type Props = {
   params: { id: string }
   searchParams?: { draftKey?: string }
 }
 
-export default async function WorkDetailPage({ params, searchParams }: WorkDetailPageProps) {
+export default async function WorkDetailPage({ params, searchParams }: Props) {
   const { id } = params
   const { draftKey } = searchParams || {}
 
