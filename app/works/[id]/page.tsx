@@ -8,6 +8,7 @@ const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY!, // ← 下書き取得権限付きのキーを使用
 })
 
+// SSG用に全worksのidを生成
 export async function generateStaticParams() {
   const { contents } = await client.getList({ endpoint: 'works' })
 

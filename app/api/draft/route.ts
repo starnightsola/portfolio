@@ -8,24 +8,26 @@ export async function GET(request: Request) {
   const contentId = searchParams.get('contentId')
   const draftKey = searchParams.get('draftKey')
 
-  if (secret !== 'PREVIEW_SECRET' || !contentId) {
-      return new Response('Invalid token', { status: 401 })
+  // ✅ 環境変数と比較
+  if (secret !== process.env.PREVIEW_SECRET || !contentId || !draftKey) {
+    return new Response('Invalid token', { status: 401 })
   }
 
-  const article = await client
-      .getListDetail({
-          endpoint: 'blogs',
-          contentId,
-          queries: { draftKey: draftKey || undefined },
-      })
-      .catch(() => null)
+  // ✅ endpoint: 'works' に変更
+  const work = await client
+    .getListDetail({
+      endpoint: 'works',
+      contentId,
+      queries: { draftKey },
+    })
+    .catch(() => null)
 
-  if (!article) {
-      return new Response('Invalid article', { status: 401 })
+  if (!work) {
+    return new Response('Invalid article', { status: 401 })
   }
 
   const draft = await draftMode()
   draft.enable()
 
-  redirect(`/articles/${article.id}`)
+  return redirect(`/works/${work.id}?draftKey=${draftKey}`)
 }
