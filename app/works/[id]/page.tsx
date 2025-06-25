@@ -6,11 +6,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function WorkDetailPage({
   params,
-  searchParams,
-}: {
-  params: { id: string }
-  searchParams: { draftKey?: string }
+  searchParams
 }) {
+  // const { params, searchParams } = props
   const { id } = params
   const draftKey = searchParams?.draftKey
 
@@ -18,9 +16,7 @@ export default async function WorkDetailPage({
     const work = await client.getListDetail({
       endpoint: 'works',
       contentId: id,
-      queries: {
-        draftKey,
-      },
+      queries: { draftKey },
     })
 
     return (
