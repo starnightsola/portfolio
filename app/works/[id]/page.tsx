@@ -1,12 +1,12 @@
-// app/works/[id]/page.tsx
 import { client } from '@/lib/client'
 
-type Props = {
+export default async function WorkDetailPage({
+  params,
+  searchParams,
+}: {
   params: { id: string }
-  searchParams: { draftKey?: string }
-}
-
-export default async function WorkDetailPage({ params, searchParams }: Props) {
+  searchParams?: { draftKey?: string }
+}) {
   const work = await client.getListDetail({
     endpoint: 'works',
     contentId: params.id,
