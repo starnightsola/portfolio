@@ -2,7 +2,6 @@
 import { client } from '@/lib/client'
 import { notFound } from 'next/navigation'
 
-// 動的レンダリングを強制
 export const dynamic = 'force-dynamic'
 
 export default async function WorkDetailPage({
@@ -10,10 +9,10 @@ export default async function WorkDetailPage({
   searchParams,
 }: {
   params: { id: string }
-  searchParams?: { draftKey?: string }
+  searchParams: { draftKey?: string }
 }) {
   const { id } = params
-  const { draftKey } = searchParams || {}
+  const draftKey = searchParams?.draftKey
 
   try {
     const work = await client.getListDetail({
