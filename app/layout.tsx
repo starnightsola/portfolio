@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ja" className={alegreya.variable}>
       <body className="bg-white text-gray-800 font-alegreya">
         <Header />
-        <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+        <main className="max-w-4xl mx-auto px-4 py-8 pt-16">{children}</main>
         <Footer />
       </body>
     </html>

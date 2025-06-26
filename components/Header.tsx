@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 text-white">
+    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-2 text-white font-en-ls">
       {/* 左：ロゴ */}
       <div className="w-32">
         <Link href="/">
@@ -36,7 +36,7 @@ export default function Header() {
         {/* メニューボタン */}
         <button
           onClick={handleToggle}
-          className="relative z-50 bg-[#cb363e] text-white py-2 px-4 rounded-full overflow-hidden w-24 h-10 cursor-pointer"
+          className="relative z-50 bg-button text-white py-2 px-4 rounded-full overflow-hidden w-24 h-10 cursor-pointer hover:opacity-80 transition"
         >
           <AnimatePresence mode="wait">
             <motion.span

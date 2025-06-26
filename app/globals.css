@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-jp: 'M PLUS 1p', sans-serif; /* 日本語フォント */
   --font-en: 'Alegreya SC', serif;    /* 英語フォント */
+  /* カラーパレット */
+  --color-button: #cb363e;
+  --color-tech-badge: #83ccd2;
+  --color-card: #f6bfbc;
+  --color-subttl: #3a1c65;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,5 +22,42 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-en),var(--font-jp);
+  font-family: 'Alegreya SC', 'M PLUS 1p', sans-serif;
 }
+.bg-button {
+  background: var(--color-button);
+}
+.text-button {
+  color: var(--color-button);
+}
+.bg-tech-badge {
+  background: var(--color-tech-badge);
+}
+.bg-card {
+  background: var(--color-card);
+}
+.font-en {
+  font-family: 'Alegreya SC', serif;
+  font-size: 1rem; /* text-sm 相当 */
+  letter-spacing: 0.1em;
+}
+.font-en-ls {
+  letter-spacing: 0.08em;
+}
+.prose ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1.5rem;
+}
+.prose h3 {
+  color: var(--color-subttl);
+  margin-bottom: 1rem;
+}
+.prose ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+}
+.button-no-wrap {
+  white-space: nowrap;
+}
+

@@ -2,24 +2,16 @@
 import { client } from '@/lib/client'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Work } from '@/types/work'
 
-type Work = {
-  id: string
-  title: string
-  description: string
-  technologies: string[]
-  image: {
-    url: string
-    width: number
-    height: number
-  }
-  siteUrl: string
-  githubUrl: string
-}
 
+// このページは60秒ごとにバックグラウンドで再生成されるようになります。
 export const revalidate = 60 // ISR設定（60秒間キャッシュ）
 
 export default async function WorksPage() {
+  // await:非同期関数 getList() の結果を待ちます。
+  // microCMS SDKは Promise を返すため、await が必要です。
+  // endpoint: 'works':microCMS 側で作った「API名」が works のコンテンツ一覧を取得します。
   const { contents } = await client.getList<Work>({ endpoint: 'works' })
 
   return (
@@ -27,9 +19,10 @@ export default async function WorksPage() {
       <h1 className="text-2xl font-bold mb-6">実績一覧</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {contents.map((work) => (
-          <div
+          <Link
+            href={`/works/${work.id}`}
             key={work.id}
-            className="border rounded-lg shadow hover:shadow-lg transition p-4"
+            className="block rounded-lg bg-card p-4 hover:shadow-md hover:-translate-y-1 transition duration-300"
           >
             <Image
               src={work.image.url}
@@ -45,35 +38,14 @@ export default async function WorksPage() {
                 {work.technologies.map((tech) => (
                   <li
                     key={tech}
-                    className="bg-gray-200 text-xs px-2 py-1 rounded"
+                    className="bg-tech-badge text-xs px-2 py-1 rounded"
                   >
                     {tech}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="flex gap-4 mt-4 text-sm">
-              <a
-                href={work.siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                サイト
-              </a>
-              <a
-                href={work.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 underline"
-              >
-                GitHub
-              </a>
-              <Link href={`/works/${work.id}`} className="text-green-700 underline">
-                詳細
-              </Link>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>

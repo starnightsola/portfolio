@@ -10,11 +10,11 @@ export default function Footer() {
         <Image src="/footerlogo.svg" alt="Kou BiShin Logo" width={100} height={100} />
 
         {/* メニュー */}
-        <ul className="flex gap-6">
+        <ul className="flex gap-4 font-en-ls px-4">
           <li>
             <Link
               href="/"
-              className="bg-[#cb363e] text-white py-3 px-6 rounded-full hover:opacity-80 transition"
+              className="bg-button text-white py-3 px-6 rounded-full hover:opacity-80 transition"
             >
               HOME
             </Link>
@@ -22,7 +22,7 @@ export default function Footer() {
           <li>
             <Link
               href="/about"
-              className="bg-[#cb363e] text-white py-3 px-6 rounded-full hover:opacity-80 transition"
+              className="bg-button text-white py-3 px-6 rounded-full hover:opacity-80 transition"
             >
               ABOUT
             </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
           <li>
             <Link
               href="/works"
-              className="bg-[#cb363e] text-white py-3 px-6 rounded-full hover:opacity-80 transition"
+              className="bg-button text-white py-3 px-6 rounded-full hover:opacity-80 transition"
             >
               WORKS
             </Link>
