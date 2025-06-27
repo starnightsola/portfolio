@@ -16,14 +16,15 @@ export async function generateStaticParams() {
   }))
 }
 
-// ✅ 明示的に PageProps を使う
-type PageProps = {
+// ✅ 明示的に Props を使う
+type Props = {
   params: {
     id: string
   }
 }
 
-export default async function WorkDetailPage({ params }: PageProps) {
+export default async function WorkDetailPage({ params }: Props) {
+  const { id } = params
   const work = await client
     .getListDetail<Work>({
       endpoint: 'works',
