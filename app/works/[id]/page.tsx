@@ -16,19 +16,17 @@ export async function generateStaticParams() {
   }))
 }
 
-// ✅ 明示的に Props を使う
-type Props = {
-  params: {
-    id: string
-  }
-}
+type Params = Promise<{ id: string }>
 
-export default async function WorkDetailPage({ params }: Props) {
-  const { id } = params
+export default async function WorkDetailPage(props: {
+  params: Params;
+}) {
+  const params = await props.params
+  const contentId = params.id
   const work = await client
     .getListDetail<Work>({
       endpoint: 'works',
-      contentId: params.id,
+      contentId,
     })
     .catch(() => null)
 
