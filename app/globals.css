@@ -5,11 +5,13 @@
   --foreground: #171717;
   --font-jp: 'M PLUS 1p', sans-serif; /* 日本語フォント */
   --font-en: 'Alegreya SC', serif;    /* 英語フォント */
+  --font-work-en: 'Tinos', serif;
   /* カラーパレット */
   --color-button: #cb363e;
   --color-tech-badge: #83ccd2;
   --color-card: #f6bfbc;
   --color-subttl: #3a1c65;
+  --color-btn-back: #3a1c65;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,14 +46,19 @@ body {
 .font-en-ls {
   letter-spacing: 0.08em;
 }
+.prose {
+  font-family: 'M PLUS 1p', sans-serif;
+}
 .prose ul {
   list-style-type: disc !important;
   padding-left: 1.5rem !important;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 .prose h3 {
   color: var(--color-subttl);
   margin-bottom: 1rem;
+  font-size: 20px;
+  border-bottom: 3px solid var(--color-subttl);
 }
 .prose ol {
   list-style-type: decimal !important;
@@ -59,5 +66,9 @@ body {
 }
 .button-no-wrap {
   white-space: nowrap;
+}
+.btn-back {
+  color: var(--color-btn-back);
+  border: 1px solid var(--color-btn-back);
 }
 

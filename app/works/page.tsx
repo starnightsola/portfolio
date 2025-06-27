@@ -15,8 +15,8 @@ export default async function WorksPage() {
   const { contents } = await client.getList<Work>({ endpoint: 'works' })
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-6">実績一覧</h1>
+    <main>
+      <h1 className="text-3xl font-bold mb-6">実績一覧</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {contents.map((work) => (
           <Link
@@ -33,12 +33,12 @@ export default async function WorksPage() {
             />
             <h2 className="text-xl font-semibold">{work.title}</h2>
             <div className="mt-2">
-              <p className="text-xs text-gray-500">使用技術:</p>
+              <p className="text-sm text-gray-500">使用技術:</p>
               <ul className="flex flex-wrap gap-2 mt-1">
                 {work.technologies.map((tech) => (
                   <li
                     key={tech}
-                    className="bg-tech-badge text-xs px-2 py-1 rounded"
+                    className="bg-tech-badge text-sm px-2 py-1 rounded"
                   >
                     {tech}
                   </li>
