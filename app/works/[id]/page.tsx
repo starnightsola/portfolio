@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { Work } from '@/types/work'
 import { ExternalLink } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
 type Props = {
   params: {
     id: string
