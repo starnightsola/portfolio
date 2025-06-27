@@ -3,16 +3,11 @@ import { client } from '@/lib/client'
 import { notFound } from 'next/navigation'
 import { Work } from '@/types/work'
 import { ExternalLink } from 'lucide-react'
-
-export const dynamic = 'force-dynamic'
-type Props = {
-  params: {
-    id: string
-  }
-}
+import Image from 'next/image'
 
 export const revalidate = 60
 
+// ✅ SSG用のID生成
 export async function generateStaticParams() {
   const { contents } = await client.getList<Work>({ endpoint: 'works' })
 
@@ -21,7 +16,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function WorkDetailPage({ params }: Props) {
+// ✅ 明示的に PageProps を使う
+type PageProps = {
+  params: {
+    id: string
+  }
+}
+
+export default async function WorkDetailPage({ params }: PageProps) {
   const work = await client
     .getListDetail<Work>({
       endpoint: 'works',
@@ -36,9 +38,11 @@ export default async function WorkDetailPage({ params }: Props) {
       <div className="flex flex-col items-center">
         <h1 className="text-2xl font-bold mb-4 text-center">{work.title}</h1>
         {work.image?.url && (
-          <img
+          <Image
             src={work.image.url}
             alt={work.title}
+            width={work.image.width}
+            height={work.image.height}
             className="rounded w-full max-w-md mb-6"
           />
         )}
