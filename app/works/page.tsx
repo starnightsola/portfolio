@@ -16,7 +16,7 @@ export default async function WorksPage() {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold mb-6">WORKS</h1>
+      <h1 className="text-3xl font-bold mb-6">Works</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {contents.map((work) => (
           <Link
