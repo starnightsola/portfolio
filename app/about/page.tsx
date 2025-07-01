@@ -18,7 +18,7 @@ export default async function AboutPage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">About</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">About</h1>
       {data ? (
         <div
           className="prose"
