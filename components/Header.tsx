@@ -36,6 +36,9 @@ export default function Header() {
         {/* メニューボタン */}
         <button
           onClick={handleToggle}
+          aria-label="メニューボタン"
+          aria-expanded={isOpen}
+          aria-controls="menu-list"
           className="relative z-50 bg-button text-white py-2 px-4 rounded-full overflow-hidden w-24 h-10 cursor-pointer hover:opacity-80 transition"
         >
           <AnimatePresence mode="wait">
@@ -56,6 +59,7 @@ export default function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.nav
+              id="menu-list"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}

@@ -16,7 +16,7 @@ export default async function WorksPage() {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold mb-6 text-center">Works</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Works</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {contents.map((work) => (
           <Link
@@ -31,7 +31,7 @@ export default async function WorksPage() {
               height={work.image.height}
               className="rounded mb-2"
             />
-            <h2 className="text-xl font-semibold">{work.title}</h2>
+            <h2 className="text-xl">{work.title}</h2>
             <div className="mt-2">
               <p className="text-sm text-gray-500">使用技術:</p>
               <ul className="flex flex-wrap gap-2 mt-1">

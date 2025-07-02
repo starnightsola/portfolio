@@ -36,7 +36,7 @@ export default async function WorkDetailPage(props: {
   return (
     <main>
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-bold mb-4 text-center">{work.title}</h1>
+        <h1 className="text-4xl font-bold mb-4 text-center">{work.title}</h1>
         {work.image?.url && (
           <Image
             src={work.image.url}
@@ -76,8 +76,8 @@ export default async function WorkDetailPage(props: {
         className="prose"
         dangerouslySetInnerHTML={{ __html: work.description }}
       />
-      <div className="mt-4 text-sm text-gray-600">
-        <p className="text-sm text-gray-500">使用技術:</p>
+      <div className="mt-4 text-sm">
+        <p className="text-sm text-gray-600">使用技術:</p>
         <ul className="flex flex-wrap gap-2 mt-1">
           {work.technologies.map((tech) => (
             <li
