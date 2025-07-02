@@ -1,4 +1,10 @@
 import { client } from '@/lib/client';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About | Kou BiShin Portfolio',
+  description: '自己紹介ページです。',
+}
 
 type About = {
   content: string; // microCMSのフィールド名に合わせて

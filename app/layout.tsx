@@ -9,6 +9,21 @@ export const metadata = {
   title: 'Kou Bisin Portfolio',
   // SEO（検索エンジン最適化）やSNSリンク表示時に使われる説明文です。
   description: 'Next.js + microCMSポートフォリオ',
+  template: '%s | Kou Bisin Portfolio',
+  themeColor: '#ffffff',
+   openGraph: {
+    type: 'website',
+    title: 'Kou Bisin Portfolio',
+    siteName: 'Kou Bisin Portfolio',
+    url: 'https://portfolio-phi-two-29.vercel.app',
+    images: [
+      {
+        url: '/ogp.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 }
 
 const alegreya = Alegreya_SC({

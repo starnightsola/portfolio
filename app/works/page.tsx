@@ -3,7 +3,12 @@ import { client } from '@/lib/client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Work } from '@/types/work'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Works | Kou BiShin Portfolio',
+  description: '制作実績ページです。',
+}
 
 // このページは60秒ごとにバックグラウンドで再生成されるようになります。
 export const revalidate = 60 // ISR設定（60秒間キャッシュ）

@@ -5,6 +5,7 @@ import { Work } from '@/types/work'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 
 export const revalidate = 60
 
@@ -18,6 +19,32 @@ export async function generateStaticParams() {
 }
 
 type Params = Promise<{ id: string }>
+
+export async function generateMetadata(props: {
+  params: Params;
+}): Promise<Metadata> {
+  const params = await props.params
+  const contentId = params.id
+  const work = await client
+    .getListDetail<Work>({
+      endpoint: 'works',
+      contentId: contentId,
+    })
+    .catch(() => null)
+
+  if (!work) return {}
+
+  return {
+    title: `${work.title} | Works`,
+    description: work.description.replace(/<[^>]+>/g, '').slice(0, 80),
+    openGraph: {
+      title: `${work.title} | Works`,
+      description: work.description.replace(/<[^>]+>/g, '').slice(0, 80),
+      images: work.image?.url ? [{ url: work.image.url }] : [],
+    },
+  }
+}
+
 
 export default async function WorkDetailPage(props: {
   params: Params;
