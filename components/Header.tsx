@@ -1,15 +1,19 @@
 'use client'
-import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import '@/styles/WaveMenu.css' // アニメーション用CSS
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  const handleToggle = () => {
-    setIsOpen(!isOpen)
-  }
+  // ページが変わったらメニューを閉じる
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+  const handleToggle = () => setIsOpen(prev => !prev)
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-2 text-white font-en-ls">
