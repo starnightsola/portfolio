@@ -21,11 +21,11 @@ export default function Header() {
       <div className="w-32">
         <Link href="/">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Kou BiShin Logo"
             width={100}
             height={50}
-            className="h-auto w-full"
+            className="h-auto w-auto max-h-10 object-contain"
           />
         </Link>
       </div>

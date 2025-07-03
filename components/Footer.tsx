@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-black text-white py-10">
       <div className="flex flex-col items-center gap-6">
         {/* ロゴ */}
-        <Image src="/footerlogo.svg" alt="Kou BiShin Logo" width={100} height={100} />
+        <Image src="/footerlogo.png" alt="Kou BiShin Logo" width={50} height={50} />
 
         {/* メニュー */}
         <ul className="flex gap-4 font-en-ls px-4">
