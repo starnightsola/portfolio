@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧑‍💻 Kou Bi Shin Portfolio
 
-## Getting Started
+Next.js（App Router）を使って構築したポートフォリオサイトです。自身のプロフィール、実績紹介、技術スタックなどを掲載しています。
 
-First, run the development server:
+## 🚀 使用技術
+
+- [Next.js 15](https://nextjs.org/)
+- TypeScript
+- Tailwind CSS
+- microCMS（ヘッドレスCMS）
+- Framer Motion（アニメーション）
+- ESLint / Prettier（コード整形）
+- Vercel（デプロイ）
+
+## 📁 ディレクトリ構成（App Router）
+/app
+├─ (home)/ … トップページ（MVのみ表示）
+├─ (default)/ … 共通レイアウト付きのページ
+│ ├─ layout.tsx … Header / Footer を含む共通レイアウト
+│ ├─ about/page.tsx … 自己紹介ページ
+│ └─ works/page.tsx … 実績一覧ページ
+│ 　　└─[id]/page.tsx … 実績詳細ページ
+/components … UI コンポーネント
+/lib … API クライアント設定（microCMSなど）
+/public … 画像・OGPなど静的ファイル
+
+## 🧩 主な機能
+
+- MV（メインビジュアル）を全てのページに表示
+- サーバーコンポーネント／クライアントコンポーネントの適切な分離
+- アクセシビリティ対応（ARIA属性、キーボード操作、コントラストなど）
+- OGP・SEO対応（metadata, sitemap.xml, robots.txt）
+- スマホ〜PCまでのレスポンシブデザイン
+- ページ遷移時のメニュー自動クローズ
+
+## 🛠 セットアップ方法
 
 ```bash
+# 依存パッケージをインストール
+npm install
+
+# 開発サーバー起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 本番ビルド
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 公開URL
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Vercelで公開中](https://portfolio-phi-two-29.vercel.app/)
