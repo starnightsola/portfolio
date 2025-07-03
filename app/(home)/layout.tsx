@@ -41,10 +41,7 @@ const alegreya = Alegreya_SC({
   variable: '--font-alegreya-sc',
 })
 
-// 全ページ共通レイアウト（共通のHTML構造）を定義する関数コンポーネント
-// children: 各ページ（例：/about や /works）の中身がここに差し込まれます。
-// ReactNode: Reactが受け取れる子要素の型（JSX要素など）
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function Layout() {
   return (
     <html lang="ja" className={alegreya.variable}>
       <body className="bg-white text-gray-800 font-alegreya">
