@@ -1,9 +1,10 @@
 // （トップページ専用）
 import "@/app/globals.css";
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Mv from "@/components/Mv";
-import { Alegreya_SC } from 'next/font/google'
+import { Alegreya_SC } from 'next/font/google';
+import AnimatedPage from '@/components/AnimatedPage';
 
 export const metadata = {
   // ブラウザのタブに表示されるページタイトルになります。
@@ -44,9 +45,11 @@ export default function Layout() {
   return (
     <html lang="ja" className={alegreya.variable}>
       <body className="bg-white text-gray-800 font-alegreya">
-        <Header />
-        <Mv />
-        <Footer />
+        <AnimatedPage>
+          <Header />
+          <Mv />
+          <Footer />
+        </AnimatedPage>
       </body>
     </html>
   );

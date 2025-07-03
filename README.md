@@ -1,4 +1,4 @@
-# 🧑‍💻 Kou Bi Shin Portfolio
+# 🧑‍💻 Kou BiShin Portfolio
 
 Next.js（App Router）を使って構築したポートフォリオサイトです。自身のプロフィール、実績紹介、技術スタックなどを掲載しています。
 

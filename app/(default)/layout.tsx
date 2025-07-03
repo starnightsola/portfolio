@@ -1,9 +1,10 @@
 import "@/app/globals.css";
-import { ReactNode } from 'react'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import { ReactNode } from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Mv from "@/components/Mv";
-import { Alegreya_SC } from 'next/font/google'
+import { Alegreya_SC } from 'next/font/google';
+import AnimatedPage from '@/components/AnimatedPage'
 
 export const metadata = {
   // ブラウザのタブに表示されるページタイトルになります。
@@ -47,10 +48,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja" className={alegreya.variable}>
       <body className="bg-white text-gray-800 font-alegreya">
-        <Header />
-        <Mv />
-        <main className="max-w-4xl mx-auto px-4 py-16 pt-16">{children}</main>
-        <Footer />
+        <AnimatedPage>
+          <Header />
+          <Mv />
+          <main className="max-w-4xl mx-auto px-4 py-16 pt-16">{children}</main>
+          <Footer />
+        </AnimatedPage>
       </body>
     </html>
   );

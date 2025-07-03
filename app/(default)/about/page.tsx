@@ -1,5 +1,5 @@
 import { client } from '@/lib/client';
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About | Kou BiShin Portfolio',
