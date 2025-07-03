@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-2 text-white font-en-ls">
       {/* 左：ロゴ */}
-      <div className="w-32">
+      <div className="w-[150px]">
         <Link href="/">
           <Image
             src="/logo.png"
