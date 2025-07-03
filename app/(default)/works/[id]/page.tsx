@@ -63,7 +63,7 @@ export default async function WorkDetailPage(props: {
   return (
     <main>
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl font-bold mb-4 text-center">{work.title}</h1>
+        <h2 className="text-4xl font-bold mb-4 text-center">{work.title}</h2>
         {work.image?.url && (
           <Image
             src={work.image.url}

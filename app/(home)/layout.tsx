@@ -7,16 +7,16 @@ import { Alegreya_SC } from 'next/font/google'
 
 export const metadata = {
   // ブラウザのタブに表示されるページタイトルになります。
-  title: 'Kou Bisin Portfolio',
+  title: 'Kou BiShin Portfolio',
   // SEO（検索エンジン最適化）やSNSリンク表示時に使われる説明文です。
   description: 'フロントエンド開発者のポートフォリオ',
-  template: '%s | Kou Bisin Portfolio',
+  template: '%s | Kou BiShin Portfolio',
   themeColor: '#ffffff',
   openGraph: {
     type: 'website',
     description: 'Next.js + microCMSを使った制作実績などを掲載',
-    title: 'Kou Bisin Portfolio',
-    siteName: 'Kou Bisin Portfolio',
+    title: 'Kou BiShin Portfolio',
+    siteName: 'Kou BiShin Portfolio',
     url: 'https://portfolio-phi-two-29.vercel.app',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata = {
     ],
     twitter: {
       card: 'summary_large_image',
-      title: 'Kou Bisin Portfolio',
+      title: 'Kou BiShin Portfolio',
       description: '制作実績やスキルを紹介するWebポートフォリオ',
       images: ['/ogp.png'],
     },

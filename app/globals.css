@@ -75,4 +75,14 @@ body {
   left: 5%;
   top: 55%;
 }
-
+@media screen and (max-width: 821px) {
+  .mv{
+    clip-path: ellipse(150% 93% at 50% 100%);
+    object-position: center center;
+    width: 100%;
+  }
+  .mv-title {
+    color: #fff;
+    top: 35%;
+  }
+}
